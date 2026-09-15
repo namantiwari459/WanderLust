@@ -1,126 +1,251 @@
-# WanderLust
+# WanderLust 🏡
 
-WanderLust is a basic accommodation listing web application built using Node.js, Express.js, MongoDB, Mongoose, and EJS.
+WanderLust is a full-stack accommodation listing web application built using Node.js, Express.js, MongoDB, Mongoose, EJS and Bootstrap.
 
-This project is being developed as part of my full-stack web development learning journey.
+The project allows users to view, create, edit and delete accommodation listings through a simple and responsive interface.
 
-## Features
+---
+
+## 🚀 Features
 
 - View all accommodation listings
-- View details of a particular listing
+- View individual listing details
 - Create a new listing
-- Edit an existing listing
-- Delete a listing
-- Store listing data in MongoDB
-- Use Mongoose for database operations
-- Use EJS for server-side rendering
-- Use Method Override for PUT and DELETE requests
+- Edit existing listings
+- Delete listings
+- MongoDB database integration using Mongoose
+- EJS templating
+- EJS-Mate layout support
+- Reusable Navbar and Footer components
+- Method Override for PUT and DELETE requests
+- Static CSS and frontend assets
+- Bootstrap responsive UI
+- Font Awesome icons
+- Custom styling with CSS
+- Sample listing data for database initialization
 
-## Tech Stack
+---
 
+## 🛠️ Tech Stack
+
+### Frontend
+- HTML
+- CSS
+- EJS
+- Bootstrap
+- Font Awesome
+
+### Backend
 - Node.js
 - Express.js
+
+### Database
 - MongoDB
 - Mongoose
-- EJS
-- Method Override
-- HTML
 
-## Project Structure
+### Other Tools
+- EJS-Mate
+- Method-Override
+- Git & GitHub
+
+---
+
+## 📁 Project Structure
 
 ```text
 WanderLust/
+│
 ├── init/
 │   ├── data.js
 │   └── index.js
+│
 ├── models/
 │   └── listing.js
+│
+├── public/
+│   └── css/
+│       └── style.css
+│
 ├── views/
+│   ├── includes/
+│   │   ├── footer.ejs
+│   │   └── navbar.ejs
+│   │
+│   ├── layouts/
+│   │   └── boilerplate.ejs
+│   │
 │   └── listings/
+│       ├── edit.ejs
 │       ├── index.ejs
 │       ├── new.ejs
-│       ├── show.ejs
-│       └── edit.ejs
+│       └── show.ejs
+│
+├── .gitignore
 ├── app.js
 ├── package.json
 ├── package-lock.json
 └── README.md
 ```
 
-## Installation
+> `node_modules/` is present locally but is ignored by Git using `.gitignore`.
 
-1. Clone the repository:
+---
+
+## ⚙️ Installation
+
+### 1. Clone the repository
 
 ```bash
-git clone <your-github-repository-url>
+git clone https://github.com/namantiwari459/WanderLust.git
 ```
 
-2. Open the project folder:
+### 2. Move into the project directory
 
 ```bash
 cd WanderLust
 ```
 
-3. Install the required dependencies:
+### 3. Install dependencies
 
 ```bash
 npm install
 ```
 
-4. Make sure MongoDB is installed and running locally.
+### 4. Start MongoDB
 
-The project uses the following MongoDB connection:
+Make sure MongoDB is installed and running on your system.
+
+The project uses the following local MongoDB database:
 
 ```text
 mongodb://127.0.0.1:27017/wanderlust
 ```
 
-5. Start the server:
+### 5. Initialize the database
+
+Run:
+
+```bash
+node init/index.js
+```
+
+This loads the sample listings into the `wanderlust` database.
+
+### 6. Start the server
 
 ```bash
 node app.js
 ```
 
-6. Open the application in your browser:
+The server will start on:
 
 ```text
 http://localhost:8080
 ```
 
-## Routes
+---
+
+## 🌐 Routes
 
 | Method | Route | Description |
 |--------|-------|-------------|
-| GET | `/` | Home route |
+| GET | `/` | Home page |
 | GET | `/listings` | Display all listings |
-| GET | `/listings/new` | Show form to create a new listing |
+| GET | `/listings/new` | Form to create a listing |
 | POST | `/listings` | Create a new listing |
-| GET | `/listings/:id` | Display a particular listing |
-| GET | `/listings/:id/edit` | Show edit form |
+| GET | `/listings/:id` | Display listing details |
+| GET | `/listings/:id/edit` | Form to edit a listing |
 | PUT | `/listings/:id` | Update a listing |
 | DELETE | `/listings/:id` | Delete a listing |
 
-## Database
+---
 
-MongoDB is used as the database for storing listing information.
+## 🗄️ Listing Model
 
-Mongoose is used to define the listing schema and interact with MongoDB.
+Each listing contains the following fields:
 
-## Phase 1
+- `title`
+- `description`
+- `image`
+- `price`
+- `location`
+- `country`
 
-Phase 1 of the WanderLust project includes the basic CRUD functionality:
+The `title` field is required, while the other fields are optional.
 
-- Create listings
-- Read listings
-- Update listings
-- Delete listings
+---
 
-The project also includes EJS views for displaying and managing listings.
+## 🎨 UI & Layout
 
-## Future Improvements
+The project uses **EJS-Mate** to create a reusable layout system.
 
-Future phases of the project will add more features and improve the overall functionality and user experience of the application.
+The main boilerplate layout includes:
 
-## Author
+- Navbar
+- Main content area
+- Footer
+- Bootstrap
+- Font Awesome
+- Custom CSS
+- Google Font
 
-Tiwari Naman
+Individual EJS pages use the common boilerplate layout instead of repeating the complete HTML structure.
+
+---
+
+## 📌 Current Progress
+
+### Phase 1 ✅
+
+- Express server setup
+- MongoDB connection
+- Mongoose model
+- CRUD operations
+- EJS views
+- Listing management
+
+### Phase 2 ✅
+
+- EJS-Mate layouts
+- Reusable Navbar
+- Reusable Footer
+- Bootstrap integration
+- Font Awesome integration
+- Custom CSS
+- Responsive listing cards
+- Improved New, Edit and Show pages
+
+### Phase 3 🚧
+
+- Middleware
+- Error handling
+- Further backend improvements
+
+---
+
+## 🔮 Future Improvements
+
+Possible future features:
+
+- User authentication
+- User authorization
+- Reviews and ratings
+- Image upload
+- Search and filtering
+- Categories
+- Maps/location integration
+- Flash messages
+- Better validation
+- Deployment
+
+---
+
+## 👨‍💻 Author
+
+**Tiwari Naman**
+
+---
+
+## ⭐ Project
+
+WanderLust is being developed as a full-stack web development learning project while practicing Node.js, Express.js, MongoDB, Mongoose, EJS and related technologies.
