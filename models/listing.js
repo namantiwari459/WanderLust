@@ -11,8 +11,8 @@ const listingSchema = new Schema({
     },
     image : {
         type : String,
-        default : "https://unsplash.com/photos/needle-tower-among-small-buildings-g8DI2ZZFt8I",
-        set : (v) => v === "" ? "https://unsplash.com/photos/needle-tower-among-small-buildings-g8DI2ZZFt8I" : v,
+        default : "https://images.unsplash.com/photo-1752951357889-1a6d4d4b5e0d?auto=format&fit=crop&w=800&q=60",
+        set : (v) => v === "" ? "https://images.unsplash.com/photo-1752951357889-1a6d4d4b5e0d?auto=format&fit=crop&w=800&q=60" : v,
     },
     price : {
         type : Number,
